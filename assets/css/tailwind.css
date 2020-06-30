@@ -1,0 +1,18 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@responsive {
+  .h-banner-600 {
+    height: 600px;
+  }
+  .h-banner-500 {
+    height: 500px;
+  }
+  .h-banner-400 {
+    height: 400px;
+  }
+  .h-banner-300 {
+    height: 300px;
+  }
+}
