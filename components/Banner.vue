@@ -7,7 +7,7 @@
       alt="banner"
       class="object-cover lg:h-banner-600 md:h-banner-500 sm:h-banner-400 h-banner-300 w-full"
     />
-    <div class="absolute top-0 opacity-75 w-full h-full bg-secondary z-0"></div>
+    <div class="absolute top-0 opacity-75 w-full h-full bg-secondary"></div>
     <div class="info center-info">
       <span class="uppercase text-white font-light text-sm"
         >Bienvenido a madireco</span
@@ -41,7 +41,7 @@ export default Vue.extend({
 
 <style scoped>
 .info {
-  @apply info flex z-10 absolute bottom-0 max-w-screen-lg w-full flex-col items-start;
+  @apply info flex absolute bottom-0 max-w-screen-lg w-full flex-col items-start;
 }
 .center-info {
   top: 50%;

@@ -9,7 +9,12 @@ module.exports = {
     extend: {
       colors: {
         primary: '#F39224',
+        'primary-light': '#F2AD39',
         secondary: '#0D2639',
+      },
+      zIndex: {
+        '-1': '-1',
+        '-10': '-10',
       },
     },
   },
