@@ -37,6 +37,6 @@ export default {}
 
 <style scoped>
 .title-item {
-  @apply font-bold pb-3;
+  @apply font-bold pb-4;
 }
 </style>
