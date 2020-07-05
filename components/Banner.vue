@@ -8,6 +8,7 @@
       class="object-cover lg:h-banner-600 md:h-banner-500 sm:h-banner-400 h-banner-300 w-full"
     />
     <div class="absolute top-0 opacity-75 w-full h-full bg-secondary"></div>
+    <div class="polygon"></div>
     <div class="info center-info">
       <span class="uppercase text-white font-light text-sm"
         >Bienvenido a madireco</span
@@ -22,11 +23,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import Btn from '@/components/_components/Btn.vue'
 
-export default Vue.extend({
+export default {
   name: 'Banner',
   components: {
     Btn,
@@ -36,7 +36,7 @@ export default Vue.extend({
       text: 'Contactar ahora',
     }
   },
-})
+}
 </script>
 
 <style scoped>
@@ -48,6 +48,10 @@ export default Vue.extend({
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+.polygon {
+  @apply absolute bottom-0 bg-white w-full h-56;
+  clip-path: polygon(100% 80%, 0% 100%, 100% 100%);
 }
 @media (min-width: 1280px) {
   img {

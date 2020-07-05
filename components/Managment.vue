@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-screen-lg mx-auto flex items-start">
+  <section class="max-w-screen-lg mx-auto flex items-start pb-32">
     <div class="flex-1">
       <div class="header-text">
         <h2 class="font-bold leading-none text-3xl">FACILITY MANAGEMENT</h2>

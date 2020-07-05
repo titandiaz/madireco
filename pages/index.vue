@@ -3,25 +3,27 @@
     <Banner />
     <ItemIcon class="-mt-16 relative" />
     <Managment class="mt-40" />
+    <Services />
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import Banner from '@/components/Banner.vue'
 import ItemIcon from '@/components/ItemIcon.vue'
 import Managment from '@/components/Managment.vue'
+import Services from '@/components/Services.vue'
 
-export default Vue.extend({
+export default {
   components: {
     Banner,
     ItemIcon,
     Managment,
+    Services,
   },
   asyncData({ route, store }) {
     store.commit('setPath', route.path)
   },
-})
+}
 </script>
 
 <style>

@@ -6,10 +6,8 @@
   </button>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+<script>
+export default {
   name: 'Btn',
   props: {
     text: {
@@ -17,7 +15,7 @@ export default Vue.extend({
       required: true,
     },
   },
-})
+}
 </script>
 
 <style scoped></style>
