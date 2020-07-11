@@ -1,14 +1,18 @@
 <template>
   <div class="w-full">
-    nosotros
+    <BannerShort />
+    <Madireco />
   </div>
 </template>
 
 <script>
+import BannerShort from '~/components/BannerShort'
+import Madireco from '~/components/Madireco'
 export default {
   asyncData({ route, store }) {
     store.commit('setPath', route.path)
   },
+  components: { BannerShort, Madireco },
 }
 </script>
 

@@ -2,16 +2,19 @@
   <div>
     <Header />
     <Nuxt />
+    <CallToAction class="center-call-to-action" />
     <Footer />
   </div>
 </template>
 <script>
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import CallToAction from '@/components/CallToAction'
 export default {
   components: {
     Header,
     Footer,
+    CallToAction,
   },
 }
 </script>
@@ -31,5 +34,12 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+.center-call-to-action {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 </style>

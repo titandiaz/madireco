@@ -13,7 +13,10 @@
       <span class="uppercase text-white font-light text-sm"
         >Bienvenido a madireco</span
       >
-      <h1 class="text-4xl font-bold block text-white max-w-md leading-10 mt-2">
+      <h1
+        class="text-4xl font-bold block text-white max-w-lg leading-10 mt-2"
+        style="letter-spacing: 0.4px;"
+      >
         La mejor opción para el
         <span class="text-primary">desarrollo de los recursos</span> de su
         empresa

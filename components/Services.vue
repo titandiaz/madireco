@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-gray-200 pt-16 pb-20">
+  <div class="w-full bg-gray-200 pt-16 pb-32">
     <div class="max-w-screen-lg mx-auto">
       <h2 class="text-center font-bold text-secondary text-3xl">
         NUESTROS SERVICIOS

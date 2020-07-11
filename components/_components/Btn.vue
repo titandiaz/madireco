@@ -1,6 +1,7 @@
 <template>
   <button
-    class="text-white bg-primary px-10 py-3 rounded cursor-pointer focus:outline-none hover:bg-orange-400"
+    v-ripple.mouseover.500="'rgba(255, 255, 255, 0.3)'"
+    class="text-white bg-primary font-bold px-10 py-3 rounded cursor-pointer focus:outline-none active:bg-orange-400"
   >
     {{ text }}
   </button>
