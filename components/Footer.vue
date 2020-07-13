@@ -14,9 +14,9 @@
       </nav>
       <ul>
         <h3 class="title-item">Información</h3>
-        <adress class="item-info"
+        <p class="item-info"
           ><img src="~/assets/place.svg" alt="" /> Calle 5A Sur # 23 - 34
-          Remansos de Rosa Blanca</adress
+          Remansos de Rosa Blanca</p
         >
         <li class="item-info">
           <img src="~/assets/email.svg" alt="" /> gerencia@madireco.com

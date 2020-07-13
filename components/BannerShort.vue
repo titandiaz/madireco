@@ -1,11 +1,11 @@
 <template>
   <div
-    class="lg:h-banner-400 md:h-banner-350 sm:h-banner-300 h-banner-250 bg-secondary w-full relative"
+    class="lg:h-banner-350 md:h-banner-320 sm:h-banner-300 h-banner-250 bg-secondary w-full relative"
   >
     <img
       src="~/assets/banner.jpg"
       alt="banner"
-      class="object-cover lg:h-banner-400 md:h-banner-350 sm:h-banner-300 h-banner-250 w-full"
+      class="object-cover lg:h-banner-350 md:h-banner-320 sm:h-banner-300 h-banner-250 w-full"
     />
     <div class="center-text">
       <h3 class="uppercase text-primary">
