@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         primary: '#F39224',
         'primary-light': '#F2AD39',
+        'primary-super-light': '#FEF4E8',
         secondary: '#0D2639',
       },
       zIndex: {

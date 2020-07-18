@@ -10,7 +10,10 @@
     "serve": "nuxt serve"
   },
   "dependencies": {
+    "gsap": "^3.4.0",
+    "mapbox-gl": "^1.11.1",
     "nuxt": "^2.13.0",
+    "vue-mapbox": "^0.4.1",
     "vue-ripple-directive": "^2.0.1"
   },
   "devDependencies": {

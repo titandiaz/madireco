@@ -1,7 +1,7 @@
 <template>
-  <div class="h-20 absolute z-10 min-w-full">
+  <div class="h-20 absolute z-30 min-w-full">
     <nav
-      class="flex justify-between px-10 items-center max-w-screen-xl mx-auto h-full"
+      class="justify-between px-10 items-center max-w-screen-xl mx-auto h-full hidden md:flex"
     >
       <img class="w-24 cursor-pointer" src="~/assets/logo.svg" alt="logo" />
       <ul class="flex">
@@ -28,14 +28,51 @@
         >
       </ul>
     </nav>
+    <div
+      ref="header"
+      class="h-16 w-full bg-white grid grid-cols-3 justify-end md:hidden shadow-lg"
+    >
+      <img
+        class="col-start-2 col-end-3 h-full center py-1"
+        src="~/assets/logo.png"
+        alt="logo"
+      />
+      <img
+        class="col-span-1 w-6 mr-6 self-center end"
+        src="~/assets/menu.svg"
+        alt="menu"
+        @click="showMenu()"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  mounted() {
+    window.onscroll = function () {
+      myFunction()
+    }
+
+    const header = this.$refs.header
+    let sticky = header.offsetTop
+
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add('sticky')
+      } else {
+        header.classList.remove('sticky')
+      }
+    }
+  },
   computed: {
     path() {
       return this.$store.state.currentPath
+    },
+  },
+  methods: {
+    showMenu() {
+      this.$store.commit('setActiveDrawer', true)
     },
   },
 }
@@ -56,5 +93,16 @@ export default {
 }
 .active {
   @apply text-primary;
+}
+.end {
+  justify-self: end;
+}
+.center {
+  justify-self: center;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 </style>

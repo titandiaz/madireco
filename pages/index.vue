@@ -2,7 +2,7 @@
   <div class="w-full">
     <Banner />
     <ItemIcon class="-mt-16 relative" />
-    <Managment class="mt-40" />
+    <Managment class="md:mt-40 mt-16" />
     <Services />
   </div>
 </template>

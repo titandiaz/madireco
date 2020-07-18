@@ -34,7 +34,11 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [{ src: '~/plugins/ripple.js', mode: 'client' }],
+  plugins: [
+    { src: '~/plugins/ripple.js', mode: 'client' },
+    { src: '~/plugins/mapbox.js', mode: 'client' },
+    { src: '~/plugins/gsap.js', mode: 'client' },
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -55,5 +59,11 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    transpile: ['gsap'],
+  },
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0', // default: localhost
+  },
 }

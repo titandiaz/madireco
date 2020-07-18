@@ -1,6 +1,12 @@
 <template>
-  <div class="grid grid-cols-3 gap-10 max-w-screen-lg mx-auto">
-    <div v-for="item in items" :key="item.text" class="bg-white shadow-md">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-3 gap-10 w-full max-w-screen-lg mx-auto px-4 lg:px-0"
+  >
+    <div
+      v-for="item in items"
+      :key="item.text"
+      class="bg-white shadow-md item-card"
+    >
       <div class="h-2 w-full" :class="item.color"></div>
       <div
         class="w-24 h-24 rounded-full mx-auto m-5 flex justify-center items-center"
@@ -18,7 +24,18 @@
 </template>
 
 <script>
+import gsap from 'gsap'
 export default {
+  mounted() {
+    gsap.from('.item-card', {
+      duration: 0.9,
+      opacity: 0,
+      scale: 0,
+      y: 200,
+      ease: 'power1',
+      stagger: 0.1,
+    })
+  },
   data() {
     return {
       items: [

@@ -1,12 +1,21 @@
 <template>
-  <div class="w-full bg-gray-200 pt-16 pb-32">
+  <div ref="services" class="w-full bg-gray-200 pt-16 pb-56 md:pb-32">
     <div class="max-w-screen-lg mx-auto">
-      <h2 class="text-center font-bold text-secondary text-3xl">
+      <h2
+        class="text-center font-bold text-secondary md:text-3xl text-2xl leading-none"
+      >
         NUESTROS SERVICIOS
       </h2>
-      <p class="text-center text-secondary">LO QUE PODEMOS HACER</p>
-      <div class="grid grid-cols-3 gap-6 mt-16">
+      <p
+        class="text-center md:leading-6 text-base md:text-lg text-secondary leading-none"
+      >
+        LO QUE PODEMOS HACER
+      </p>
+      <div
+        class="center grid grid-cols-1 items-center sm:grid-cols-2 md:grid-cols-3 gap-6 mt-16 px-4 lg:px-0"
+      >
         <Card
+          class="card"
           v-for="(card, index) in cards"
           :key="`card_${index}`"
           :imagen="card.imagen"
@@ -20,14 +29,26 @@
 </template>
 
 <script>
+import gsap from 'gsap'
 import Card from '~/components/_components/Card.vue'
 
 export default {
   components: {
     Card,
   },
+  mounted() {
+    const observer = new IntersectionObserver(this.callback, this.options)
+    observer.observe(this.$refs.services)
+  },
   data() {
     return {
+      bool: true,
+      count: 100,
+      options: {
+        // root: '',
+        // rootMargin: '',
+        // threshold: ''
+      },
       cards: [
         {
           hash: '#uno',
@@ -74,7 +95,31 @@ export default {
       ],
     }
   },
+  methods: {
+    callback(entries, observer) {
+      if (entries[0].isIntersecting == true && this.bool) {
+        this.bool = false
+        this.count += 1
+        gsap
+          .from('.card', {
+            duration: 0.9,
+            opacity: 0,
+            scale: 0,
+            y: 200,
+            ease: 'power1',
+            stagger: 0.1,
+          })
+          .then(() => {
+            this.bool = true
+          })
+      }
+    },
+  },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.center {
+  justify-items: center;
+}
+</style>

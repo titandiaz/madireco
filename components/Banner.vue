@@ -1,20 +1,20 @@
 <template>
   <div
-    class="lg:h-banner-600 md:h-banner-500 sm:h-banner-400 h-banner-300 bg-secondary w-full relative"
+    class="lg:h-banner-600 md:h-banner-500 sm:h-banner-400 h-banner-400 bg-secondary w-full relative"
   >
     <img
       src="~/assets/banner.jpg"
       alt="banner"
-      class="object-cover lg:h-banner-600 md:h-banner-500 sm:h-banner-400 h-banner-300 w-full"
+      class="object-cover lg:h-banner-600 md:h-banner-500 sm:h-banner-400 h-banner-400 w-full"
     />
     <div class="absolute top-0 opacity-75 w-full h-full bg-secondary"></div>
     <div class="polygon"></div>
-    <div class="info center-info">
+    <div class="info center-info sm:items-start items-center lg:px-0 px-4">
       <span class="uppercase text-white font-light text-sm"
         >Bienvenido a madireco</span
       >
       <h1
-        class="text-4xl font-bold block text-white max-w-lg leading-10 mt-2"
+        class="text-2xl sm:text-4xl font-bold block text-center sm:text-left text-white max-w-lg leading-none sm:leading-10 mt-2"
         style="letter-spacing: 0.4px;"
       >
         La mejor opción para el
@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 .info {
-  @apply info flex absolute bottom-0 max-w-screen-lg w-full flex-col items-start;
+  @apply flex absolute bottom-0 max-w-screen-lg w-full flex-col;
 }
 .center-info {
   top: 50%;

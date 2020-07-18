@@ -1,18 +1,22 @@
 <template>
   <div class="w-full">
-    <BannerShort />
+    <BannerShort :title="'SOBRE NOSOTROS'" :subtitle="'¿ QUIÉNES SOMOS ?'" />
     <Madireco />
+    <whyChooseUs />
+    <Logos />
   </div>
 </template>
 
 <script>
 import BannerShort from '~/components/BannerShort'
 import Madireco from '~/components/Madireco'
+import whyChooseUs from '~/components/whyChooseUs'
+import Logos from '~/components/Logos'
 export default {
   asyncData({ route, store }) {
     store.commit('setPath', route.path)
   },
-  components: { BannerShort, Madireco },
+  components: { BannerShort, Madireco, whyChooseUs, Logos },
 }
 </script>
 
