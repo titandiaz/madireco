@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mb-40">
+  <div class="w-full mb-56 md:mb-40 p-4 md:p-0">
     <div id="map" class="map-box"></div>
   </div>
 </template>

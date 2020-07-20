@@ -4,6 +4,7 @@
     <ItemIcon class="-mt-16 relative" />
     <Managment class="md:mt-40 mt-16" />
     <Services />
+    <Logos class="pt-16"/>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Banner from '@/components/Banner.vue'
 import ItemIcon from '@/components/ItemIcon.vue'
 import Managment from '@/components/Managment.vue'
 import Services from '@/components/Services.vue'
+import Logos from '~/components/Logos'
 
 export default {
   components: {
@@ -19,6 +21,7 @@ export default {
     ItemIcon,
     Managment,
     Services,
+    Logos
   },
   asyncData({ route, store }) {
     store.commit('setPath', route.path)

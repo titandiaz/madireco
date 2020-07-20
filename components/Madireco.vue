@@ -44,7 +44,7 @@
               alt="check"
               class="md:mr-6 mr-0 px-4 md:px-0"
             />
-            <span class="text-sm pt-3 md:pt-0">{{ item.text }}</span>
+            <span class="text-sm pt-3 px-1 md:pt-0">{{ item.text }}</span>
           </li>
         </ul>
       </div>

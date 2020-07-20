@@ -3,7 +3,7 @@
     <BannerShort :title="'SOBRE NOSOTROS'" :subtitle="'¿ QUIÉNES SOMOS ?'" />
     <Madireco />
     <whyChooseUs />
-    <Logos />
+    <Logos class="mt-32" />
   </div>
 </template>
 

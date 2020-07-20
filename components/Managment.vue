@@ -16,8 +16,7 @@
         </p>
       </div>
       <div
-        v-if="sizeWidth < 800"
-        class="md:max-w-sm w-full max-w-full relative flex justify-center md:justify-end"
+        class="md:max-w-sm w-full max-w-full relative md:hidden flex justify-center md:justify-end"
       >
         <img
           src="~/assets/Imagen 2.png"
@@ -42,8 +41,7 @@
       </div>
     </div>
     <div
-      v-if="sizeWidth > 800"
-      class="max-w-sm w-full relative flex justify-end"
+      class="max-w-sm w-full relative justify-end hidden md:flex"
     >
       <img src="~/assets/Imagen 2.png" alt="obrero" class="size-image" />
       <div class="border-image"></div>
@@ -87,7 +85,7 @@ export default {
 }
 .size-image {
   max-width: 360px;
-  @apply w-full mt-10;
+  @apply w-full mt-10 h-full;
 }
 .size-image-small {
   max-width: 260px;

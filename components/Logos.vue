@@ -1,14 +1,13 @@
 <template>
-  <div class="w-full mb-40 mt-32">
+  <div class="w-full mb-64 md:mb-40">
     <div class="max-w-screen-lg mx-auto">
-      <h3 class="text-center text-secondary font-bold mb-10">
+      <h3 class="text-center text-secondary text-xl font-bold mb-10">
         Empresas que confían en nosotros
       </h3>
-      <div class="w-full grid grid-cols-4 gap-3">
-        <div class="bg-gray-300 rounded-md h-24"></div>
-        <div class="bg-gray-300 rounded-md h-24"></div>
-        <div class="bg-gray-300 rounded-md h-24"></div>
-        <div class="bg-gray-300 rounded-md h-24"></div>
+      <div class="w-full grid md:grid-cols-4 grid-cols-2 px-4 md:px-0 gap-3">
+        <div class="border rounded-md h-24 p-2" v-for="item in 8" :key="item">
+          <img :src="require(`~/assets/logos/logo_${item}.png`)" class="object-contain w-full h-full opacity-75" :alt="`logo ${item}`">
+        </div>
       </div>
     </div>
   </div>
