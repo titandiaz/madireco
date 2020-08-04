@@ -4,12 +4,12 @@
       <h2
         class="text-center font-bold text-secondary md:text-3xl text-2xl leading-none"
       >
-        NUESTROS SERVICIOS
+        {{ title }}
       </h2>
       <p
         class="text-center md:leading-6 text-base md:text-lg text-secondary leading-none"
       >
-        LO QUE PODEMOS HACER
+        {{ subtitle }}
       </p>
       <div
         class="center grid grid-cols-1 items-center sm:grid-cols-2 md:grid-cols-3 gap-6 mt-16 px-4 lg:px-0"
@@ -33,12 +33,23 @@ import gsap from 'gsap'
 import Card from '~/components/_components/Card.vue'
 
 export default {
+  scrollToTop: true,
   components: {
     Card,
   },
   mounted() {
     const observer = new IntersectionObserver(this.callback, this.options)
     observer.observe(this.$refs.services)
+  },
+  props: {
+    title: {
+      type: String,
+      default: '',
+    },
+    subtitle: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {
@@ -72,25 +83,25 @@ export default {
             'Ofrecemos servicios de Obra Blanca (pintura, estuco, acabados, cielos rasos, Dry Wall, PVC, icopor…)',
         },
         {
-          hash: '#uno',
-          title: 'Aire Acondicionado y ventilación mecánica',
-          imagen: require('~/assets/img/card-4.png'),
-          description:
-            'Ofrecemos siempre una buena solución a sus necesidades de ventilación.',
-        },
-        {
-          hash: '#dos',
-          title: 'Electricidad de medio y baja tención',
+          hash: '#cuatro',
+          title: 'Electricidad de medio y baja tensión',
           imagen: require('~/assets/img/card-5.png'),
           description:
             'El proceso consiste en una inspección detalla de cada uno de los sistemas de aire (baja, media y alta presión)',
         },
         {
-          hash: '#tres',
+          hash: '#cinco',
           title: 'Carpintería metálica',
           imagen: require('~/assets/img/card-6.png'),
           description:
             'Asesoramos a todo tipo de establecimientos, en el cálculo, diseño e implementación de sus sistemas.',
+        },
+        {
+          hash: '#seis',
+          title: 'Mantenimiento preventivo y correctivo aires acondicionados',
+          imagen: require('~/assets/img/card-4.png'),
+          description:
+            'Ofrecemos siempre una buena solución a sus necesidades de ventilación.',
         },
       ],
     }
@@ -112,6 +123,7 @@ export default {
           .then(() => {
             this.bool = true
           })
+          .catch((e) => console.log(e))
       }
     },
   },

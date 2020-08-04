@@ -3,8 +3,8 @@
     <Banner />
     <ItemIcon class="-mt-16 relative" />
     <Managment class="md:mt-40 mt-16" />
-    <Services />
-    <Logos class="pt-16"/>
+    <Services title="NUESTROS SERVICIOS" subtitle="LO QUE PODEMOS HACER" />
+    <Logos class="pt-16" />
   </div>
 </template>
 
@@ -16,15 +16,20 @@ import Services from '@/components/Services.vue'
 import Logos from '~/components/Logos'
 
 export default {
+  scrollToTop: true,
+  mounted() {
+    function topFunction() {
+      document.body.scrollTop = 0 // For Safari
+      document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+    }
+    topFunction()
+  },
   components: {
     Banner,
     ItemIcon,
     Managment,
     Services,
-    Logos
-  },
-  asyncData({ route, store }) {
-    store.commit('setPath', route.path)
+    Logos,
   },
 }
 </script>

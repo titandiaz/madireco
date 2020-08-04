@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="flex-1">
-      <h2 class="title text-2xl sm:text-4xl">MARIDECO</h2>
+      <h2 class="title text-2xl sm:text-4xl">MADIRECO</h2>
       <div class="text-secondary font-normal">
         <p class="mt-12">
           Somos una empresa privada fundada en la ciudad de Villavicencio,

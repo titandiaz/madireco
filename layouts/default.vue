@@ -13,6 +13,7 @@ import Footer from '@/components/Footer'
 import CallToAction from '@/components/CallToAction'
 import Drawer from '@/components/Drawer'
 export default {
+  scrollToTop: true,
   components: {
     Header,
     Footer,
@@ -22,6 +23,9 @@ export default {
   mounted() {
     this.dw_getWindowDims()
     window.addEventListener('resize', this.reportWindowSize)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.reportWindowSize)
   },
   data() {
     return {
@@ -34,6 +38,38 @@ export default {
     },
   },
   methods: {
+    redirectWhatsapp() {
+      if (this.dataStore.tienda.whatsapp.length > 10) {
+        let phone_number_whatsapp = this.dataStore.tienda.whatsapp
+        if (phone_number_whatsapp.charAt(0) === '+') {
+          phone_number_whatsapp = phone_number_whatsapp.slice(1)
+        }
+        if (this.mobileCheck()) {
+          window.open(
+            `https://wa.me/${phone_number_whatsapp}/?text=Hola%20vengo%20de%20tu%20tienda%20online%20y%20me%20gustaría%20recibir%20mas%20información`,
+            '_blank'
+          )
+        } else {
+          window.open(
+            `https://web.whatsapp.com/send?phone=${phone_number_whatsapp}&text=Hola%20vengo%20de%20tu%20tienda%20online%20y%20me%20gustaría%20recibir%20mas%20información%20${window.location}`,
+            '_blank'
+          )
+        }
+      } else {
+        if (this.mobileCheck()) {
+          window.open(
+            `https://wa.me/57${this.dataStore.tienda.whatsapp}/?text=Hola%20vengo%20de%20tu%20tienda%20online%20y%20me%20gustaría%20recibir%20mas%20información`,
+            '_blank'
+          )
+        } else {
+          window.open(
+            `https://web.whatsapp.com/send?phone=57${this.dataStore.tienda.whatsapp}&text=Hola%20vengo%20de%20tu%20tienda%20online%20y%20me%20gustaría%20recibir%20mas%20información%20${window.location}`,
+            '_blank'
+          )
+        }
+      }
+    },
+
     dw_getWindowDims() {
       const doc = document,
         w = window
@@ -83,5 +119,11 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+.nuxt-link-active {
+  @apply text-primary;
+}
+.nuxt-link-exact-active {
+  @apply text-primary;
 }
 </style>

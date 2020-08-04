@@ -13,8 +13,12 @@ import Madireco from '~/components/Madireco'
 import whyChooseUs from '~/components/whyChooseUs'
 import Logos from '~/components/Logos'
 export default {
-  asyncData({ route, store }) {
-    store.commit('setPath', route.path)
+  mounted() {
+    function topFunction() {
+      document.body.scrollTop = 0 // For Safari
+      document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+    }
+    topFunction()
   },
   components: { BannerShort, Madireco, whyChooseUs, Logos },
 }

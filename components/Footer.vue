@@ -42,27 +42,30 @@
       <div class="">
         <h3 class="title-item text-center md:text-left">Síguenos</h3>
         <ul class="flex justify-center md:justify-start">
-          <nuxt-link to="#">
+          <a
+            href="https://www.facebook.com/Madireco-Services-SAS-352493835323283"
+            target="_blank"
+          >
             <img
               src="~/assets/facebook.svg"
               class="w-10 cursor-pointer opacity-75 icon"
               alt="iconn facebook"
             />
-          </nuxt-link>
-          <nuxt-link to="#">
+          </a>
+          <a href="#">
             <img
               src="~/assets/twitter.svg"
               class="w-10 cursor-pointer opacity-75 icon"
               alt="iconn facebook"
             />
-          </nuxt-link>
-          <nuxt-link to="#">
+          </a>
+          <a href="https://www.instagram.com/madirecoservices/" target="_blank">
             <img
               src="~/assets/instagram.svg"
               class="w-10 cursor-pointer opacity-75 icon"
               alt="iconn facebook"
             />
-          </nuxt-link>
+          </a>
         </ul>
       </div>
     </div>

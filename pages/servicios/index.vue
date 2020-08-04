@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <BannerShort :title="'NUESTROS SERVICIOS'" :subtitle="'¿ QUE HACEMOS ?'" />
-    <Services/>
+    <Services />
   </div>
 </template>
 
@@ -10,13 +10,18 @@ import BannerShort from '~/components/BannerShort'
 import Services from '@/components/Services.vue'
 
 export default {
-  asyncData({ route, store }) {
-    store.commit('setPath', route.path)
+  scrollToTop: true,
+  mounted() {
+    function topFunction() {
+      document.body.scrollTop = 0 // For Safari
+      document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+    }
+    topFunction()
   },
-    components: {
-      BannerShort,
-      Services
-    },
+  components: {
+    BannerShort,
+    Services,
+  },
   data() {
     return {
       // fullPath: null,
